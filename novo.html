@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solução de Software</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body class="font-sans bg-gray-900 text-white">
+
+    <!-- Header -->
+    <header class="fixed w-full bg-gray-800 shadow-md z-50">
+        <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <img src="assets/logo.png" alt="Logo" class="h-10 w-auto">
+
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex space-x-8 text-gray-400">
+                <a href="#inicio" class="text-gray-400 hover:text-blue-500">Início</a>
+                <a href="#funcionalidades" class="text-gray-400 hover:text-blue-500">Funcionalidades</a>
+                <a href="#preco" class="text-gray-400 hover:text-blue-500">Preços</a>
+                <a href="#depoimento" class="text-gray-400 hover:text-blue-500">Depoimentos</a>
+                <a href="#faq" class="text-gray-400 hover:text-blue-500">Perguntas Frequentes</a>
+                <a href="#contato" class="text-gray-400 hover:text-blue-500">Contato</a>
+            </nav>
+
+            <!-- CTA Button -->
+            <a href="#contato" class="hidden md:block bg-blue-700 text-white px-6 py-2 rounded-full hover:bg-blue-800">
+                Agendar Demonstração
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <div x-data="{ open: false }" class="md:hidden">
+                <button @click="open = !open" class="focus:outline-none">
+                    <i x-show="!open" class='fa-solid fa-bars  text-gray-400 text-xl text-center p-2 rounded'></i>
+                    <i x-show="open"
+                        class='fa-solid fa-bars  text-gray-400 bg-black bg-opacity-[10%] text-xl text-center p-2 rounded'></i>
+                </button>
+
+                <!-- Mobile Dropdown Menu -->
+                <div x-show="open" class="absolute top-16 left-0 w-full bg-gray-800 shadow-lg">
+                    <nav class="flex flex-col p-4 space-y-4">
+                        <a href="#inicio" class="text-gray-400 hover:text-blue-500">Início</a>
+                        <a href="#funcionalidades" class="text-gray-400 hover:text-blue-500">Funcionalidades</a>
+                        <a href="#preco" class="text-gray-400 hover:text-blue-500">Preços</a>
+                        <a href="#depoimento" class="text-gray-400 hover:text-blue-500">Depoimentos</a>
+                        <a href="#faq" class="text-gray-400 hover:text-blue-500">Perguntas Frequentes</a>
+                        <a href="#contato" class="text-gray-400 hover:text-blue-500">Contato</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="pt-24 pb-12 bg-gradient-to-r from-gray-800 to-blue-900">
+        <div class="container mx-auto px-4 flex flex-col justify-between md:flex-row items-center py-24">
+            <div class="md:w-1/2 mb-8 md:mb-0 max-w-2xl">
+                <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">
+                    Controle Total de Estoque e Vendas, Simples e Eficiente
+                </h1>
+                <p class="text-xl text-gray-300 mb-8">
+                    Automatize seu estoque, gerencie vendas em tempo real e imprima etiquetas com facilidade.
+                </p>
+                <a href="#contato"
+                    class="bg-blue-700 text-white px-8 py-3 rounded-full text-lg hover:bg-blue-800 transition duration-300">
+                    Agendar uma Demonstração
+                </a>
+            </div>
+            <div class="md:w-1/2">
+                <img src="assets/image.png" alt="Sistema em ação" class="rounded-lg shadow-2xl">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="funcionalidades" class="py-16 bg-gray-800">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-white">Funcionalidades</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature Item -->
+                <div class="px-6 py-8 border rounded-lg bg-gray-700 hover:shadow-lg transition duration-300">
+                    <div class="pb-4">
+                        <i class='fa-solid fa-box-open text-4xl text-blue-500'></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-white">Controle Inteligente de Estoque</h3>
+                    <p class="text-gray-300">Monitore o estoque em tempo real, receba alertas de reposição e evite desperdícios.</p>
+                </div>
+                <div class="px-6 py-8 border rounded-lg bg-gray-700 hover:shadow-lg transition duration-300">
+                    <div class="mb-4">
+                        <i class='fa-solid fa-chart-line text-4xl text-blue-500'></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-white">Gestão de Vendas Simplificada</h3>
+                    <p class="text-gray-300">Acompanhe suas vendas e obtenha relatórios detalhados para uma gestão eficaz.</p>
+                </div>
+                <div class="px-6 py-8 border rounded-lg bg-gray-700 hover:shadow-lg transition duration-300">
+                    <div class="mb-4">
+                        <i class='fa-solid fa-barcode text-4xl text-blue-500'></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-white">Geração de Etiquetas</h3>
+                    <p class="text-gray-300">Gere etiquetas para impressão com código de barras de forma prática e rápida.</p>
+                </div>
+                <div class="px-6 py-8 border rounded-lg bg-gray-700 hover:shadow-lg transition duration-300">
+                    <div class="mb-4">
+                        <i class='fa-solid fa-clipboard-check text-4xl text-blue-500'></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-white">Relatórios e Insights</h3>
+                    <p class="text-gray-300">Visualize o desempenho do seu negócio com relatórios completos e insights.</p>
+                </div>
+                <div class="px-6 py-8 border rounded-lg bg-gray-700 hover:shadow-lg transition duration-300">
+                    <div class="mb-4">
+                        <i class='fa-solid fa-laptop text-4xl text-blue-500'></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-white">Sistema na núvem</h3>
+                    <p class="text-gray-300">Dados seguros e salvos na núvem.</p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+        <!-- Pricing Section -->
+<section id="preco" class="py-16 bg-gradient-to-r from-gray-800 to-blue-900">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12 text-white">Planos e Preços</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            
+            <!-- Plano Básico -->
+            <div class="p-8 rounded-lg bg-gray-700 text-center text-white">
+                <h3 class="text-2xl font-bold mb-4">Básico</h3>
+                <p class="text-4xl font-bold mb-2">R$80/mês</p>
+                <p class="text-sm text-gray-300 mb-6">Ou <span class="font-bold">R$864/ano</span> (10% OFF)</p>
+                <ul class="space-y-3 mb-8 text-gray-300">
+                    <li class="flex items-center justify-center">
+                        <i class="fa-solid fa-check-circle mr-2 text-blue-500"></i><strong> Funcionalidades Essenciais</strong>
+                    </li>
+                    <li class="flex items-center justify-center">
+                        <i class="fa-solid fa-check-circle mr-2 text-blue-500"></i> Suporte por e-mail
+                    </li>
+                    <li class="flex items-center justify-center">
+                        <i class="fa-solid fa-check-circle mr-2 text-blue-500"></i> Até <strong>2 usuários simultâneos</strong>
+                    </li>
+                </ul>
+                <a href="#contato" class="bg-blue-700 text-white px-6 py-2 rounded-full hover:bg-blue-800 transition duration-300">
+                    Assinar
+                </a>
+            </div>
+            
+            <!-- Plano Profissional -->
+            <div class="p-8 rounded-lg bg-gray-700 text-center text-white border-2 border-blue-500 relative">
+                <span class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-blue-500 text-white px-4 py-1 rounded-full text-sm font-bold">Mais Popular</span>
+                <h3 class="text-2xl font-bold mb-4">Profissional</h3>
+                <p class="text-4xl font-bold mb-2">R$120/mês</p>
+                <p class="text-sm text-gray-300 mb-6">Ou <span class="font-bold">R$1.296/ano</span> (10% OFF)</p>
+                <ul class="space-y-3 mb-8 text-gray-300">
+                    <li class="flex items-center justify-center">
+                        <i class="fa-solid fa-check-circle mr-2 text-blue-500"></i><strong> Funcionalidades Básicas e Avançadas</strong>
+                    </li>
+                    <li class="flex items-center justify-center">
+                        <i class="fa-solid fa-check-circle mr-2 text-blue-500"></i> Suporte via WhatsApp
+                    </li>
+                    <li class="flex items-center justify-center">
+                        <i class="fa-solid fa-check-circle mr-2 text-blue-500"></i> Até <strong>4 usuários simultâneos</strong>
+                    </li>
+                    <li class="flex items-center justify-center">
+                        <i class="fa-solid fa-check-circle mr-2 text-blue-500"></i> <strong>Gerenciamento de Filiais</strong>
+                    </li>
+                    <li class="flex items-center justify-center">
+                        <i class="fa-solid fa-check-circle mr-2 text-blue-500"></i> Sistema de <strong> Crediário para Clientes</strong>
+                    </li>
+                </ul>
+                <a href="#contato" class="bg-blue-700 text-white px-6 py-2 rounded-full hover:bg-blue-800 transition duration-300 text-lg font-bold">
+                    Assinar Agora
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Testimonials Section -->
+    <section id="depoimento" class="py-16 bg-gray-800">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-white">O que nossos clientes dizem</h2>
+            <div class="flex justify-center space-x-8">
+                <!-- Testimonial Item -->
+                <div class="bg-gray-700 p-8 rounded-lg shadow-lg max-w-sm text-center text-white">
+                    <p class="text-lg text-gray-300 mb-6">"O sistema de gerenciamento de estoque tem transformado a forma como lidamos com o inventário. É simples, rápido e altamente eficiente!"</p>
+                    <h4 class="font-semibold text-xl text-blue-500">Maria Souza</h4>
+                    <p class="text-sm text-gray-400">Gerente de Operações</p>
+                </div>
+                <div class="bg-gray-700 p-8 rounded-lg shadow-lg max-w-sm text-center text-white">
+                    <p class="text-lg text-gray-300 mb-6">"Com a automatização do processo de vendas, nosso fluxo de caixa melhorou significativamente. Estamos muito mais organizados!"</p>
+                    <h4 class="font-semibold text-xl text-blue-500">José Silva</h4>
+                    <p class="text-sm text-gray-400">Diretor Financeiro</p>
+                </div>
+                <div class="bg-gray-700 p-8 rounded-lg shadow-lg max-w-sm text-center text-white">
+                    <p class="text-lg text-gray-300 mb-6">"A impressão de etiquetas é extremamente rápida e fácil de usar. A integração com nosso sistema foi impecável!"</p>
+                    <h4 class="font-semibold text-xl text-blue-500">Fernanda Lima</h4>
+                    <p class="text-sm text-gray-400">Coordenadora de Vendas</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-16 bg-gray-800">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-white">Perguntas Frequentes</h2>
+            <div class="space-y-8">
+                <div x-data="{ open: false }" class="border rounded-lg bg-gray-700 shadow">
+                    <button @click="open = !open"
+                        class="w-full p-4 text-left text-white flex justify-between items-center">
+                        <span>Como funciona o período de teste grátis?</span>
+                        <span x-show="!open">+</span>
+                        <span x-show="open">-</span>
+                    </button>
+                    <p x-show="open" class="p-4 text-white">Oferecemos 14 dias de teste grátis com todas as
+                        funcionalidades do plano Profissional.</p>
+                </div>
+                <div x-data="{ open: false }" class="border rounded-lg bg-gray-700 shadow">
+                    <button @click="open = !open"
+                        class="w-full p-4 text-left text-white flex justify-between items-center">
+                        <span>Como posso agendar uma demonstração?</span>
+                        <span x-show="!open">+</span>
+                        <span x-show="open">-</span>
+                    </button>
+                    <p x-show="open" class="p-4 text-white">Você pode agendar uma demonstração clicando no botão de "Agendar Demonstração" no topo da página ou na seção abaixo.</p>
+                </div>
+                <div x-data="{ open: false }" class="border rounded-lg bg-gray-700 shadow">
+                    <button @click="open = !open"
+                        class="w-full p-4 text-left text-white flex justify-between items-center">
+                        <span>Quais são as formas de pagamento?</span>
+                        <span x-show="!open">+</span>
+                        <span x-show="open">-</span>
+                    </button>
+                    <p x-show="open" class="p-4 text-white">Todo pagamento pode ser via boleto ou Pix.</p>
+                </div>
+                <div x-data="{ open: false }" class="border rounded-lg bg-gray-700 shadow">
+                    <button @click="open = !open"
+                        class="w-full p-4 text-left text-white flex justify-between items-center">
+                        <span>O sistema oferece suporte a múltiplos usuários?</span>
+                        <span x-show="!open">+</span>
+                        <span x-show="open">-</span>
+                    </button>
+                    <p x-show="open" class="p-4 text-white">Sim, o sistema permite gerenciar diferentes perfis de usuário com permissões específicas de acordo com suas funções.</p>
+                </div>
+                <div x-data="{ open: false }" class="border rounded-lg bg-gray-700 shadow">
+                    <button @click="open = !open"
+                        class="w-full p-4 text-left text-white flex justify-between items-center">
+                        <span>Posso testar o sistema antes de assinar?</span>
+                        <span x-show="!open">+</span>
+                        <span x-show="open">-</span>
+                    </button>
+                    <p x-show="open" class="p-4 text-white">Sim! Oferecemos um período de teste gratuito para que você possa conhecer todas as funcionalidades antes de contratar um plano. Entre em contato para ativar seu teste.</p>
+                </div>
+                <div x-data="{ open: false }" class="border rounded-lg bg-gray-700 shadow">
+                    <button @click="open = !open"
+                        class="w-full p-4 text-left text-white flex justify-between items-center">
+                        <span>O sistema funciona em quais dispositivos?</span>
+                        <span x-show="!open">+</span>
+                        <span x-show="open">-</span>
+                    </button>
+                    <p x-show="open" class="p-4 text-white">Nosso sistema atualmente é compatível com computadores e notebooks com sistema Windows 10 ou superior, permitindo que você acesse suas informações de qualquer lugar com acesso à internet.</p>
+                </div>
+                <div x-data="{ open: false }" class="border rounded-lg bg-gray-700 shadow">
+                    <button @click="open = !open"
+                        class="w-full p-4 text-left text-white flex justify-between items-center">
+                        <span>Posso alterar ou cancelar meu plano a qualquer momento?</span>
+                        <span x-show="!open">+</span>
+                        <span x-show="open">-</span>
+                    </button>
+                    <p x-show="open" class="p-4 text-white">Sim! Você pode fazer upgrade para um plano superior a qualquer momento. O cancelamento pode ser solicitado sem burocracia, respeitando o período de faturamento vigente.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section id="contato" class="py-16 bg-gradient-to-r from-gray-800 to-blue-900 text-white text-center">
+        <h2 class="text-3xl font-bold mb-8">Comece a transformar o controle de estoque e vendas da sua empresa!</h2>
+        <div class="flex justify-center space-x-4">
+            <a href="https://wa.link/htuil4"
+                class="bg-white text-blue-600 px-6 py-3 rounded-full hover:bg-gray-100 flex items-center">
+                <span class="material-icons mr-2">whatsapp</span> <i class="fa-brands fa-whatsapp text-xl"></i>
+
+            </a>
+            <a href="mailto:rikfreire2010@hotmail.com"
+                class="bg-white text-blue-600 px-6 py-3 rounded-full hover:bg-gray-100 flex items-center">
+                <span class="material-icons mr-2">email</span> <i class="fa-regular fa-envelope text-xl"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="flex flex-col items-center">
+                    <a href="https://juanpablofarias.com">
+                        <img src="assets/logo_black.png" alt="Logo" class="h-16 w-auto mb-4" />
+                    </a>
+                    <p class="text-gray-400">Soluções completas para seu negócio</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Links Rápidos</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#inicio" class="text-gray-400 hover:text-white">Início</a></li>
+                        <li><a href="#funcionalidades" class="text-gray-400 hover:text-white">Funcionalidades</a></li>
+                        <li><a href="#preco" class="text-gray-400 hover:text-white">Preços</a></li>
+                        <li><a href="#depoimento" class="text-gray-400 hover:text-white">Depoimentos</a></li>
+                        <li><a href="#contato" class="text-gray-400 hover:text-white">Contato</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contato</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center text-gray-400">
+                            <FaPhone class="mr-2" /> Celular: (19) 9 9698-3542
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <FaEnvelope class="mr-2" /> E-mail: andromedasolutions2025@hotmail.com
+                        </li>
+                    </ul>
+                </div>
+            <!--<div>
+                    <h4 class="text-lg font-semibold mb-4">Redes Sociais</h4>
+                    <div class="flex space-x-4">
+                        <a href="#contato" class="text-gray-400 hover:text-white">
+                            <i class="fa-brands fa-facebook text-xl"></i>
+                        </a>
+                        <a href="#contato" class="text-gray-400 hover:text-white">
+                            <i class="fa-brands fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#contato" class="text-gray-400 hover:text-white">
+                            <i class="fa-brands fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#contato" class="text-gray-400 hover:text-white">
+                            <i class="fa-brands fa-linkedin text-xl"></i>
+                        </a>
+                    </div>
+                </div>  -->
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Andromeda Solutions - NexusPro Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
